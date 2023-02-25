@@ -8,9 +8,9 @@ jobs:
         run: |
           ls
           pwd
-          echo "${{github.sha}}""
-          echo "${{github.repository}}""
-          echo "${{github.workspace}}""
+          echo "${{github.sha}}"
+          echo "${{github.repository}}"
+          echo "${{github.workspace}}"
           echo "${{ github.token }}"
           # git clone git@github:$GITHUB_REPOSITORY
           # git checkout $GITHUB_SHA
