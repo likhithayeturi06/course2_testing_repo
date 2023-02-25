@@ -1,0 +1,16 @@
+name: Actions workflow
+run: push
+jobs:
+  run-github-actions:
+  steps:
+    - name: Simple JavaScript action
+      id: greet
+      uses: actions/hello-world-javascript-action@v1.1   # uses will take refrence to an action@branch or version or commitid in preious actions
+      #adding inputs to an action
+      with:
+        who-to-greet: Likhitha
+      # to access the output
+    - name: Log greeting time
+      run: echo ${{ steps.greet.outputs.time }}  
+        # to reference another step we use ${{steps}} in order to refer to particular step we need to declare id that is
+        # ${{steps.greet}} output of an action ${{steps.greet.outputs.time}} output we are taking as time
