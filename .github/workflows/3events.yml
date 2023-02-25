@@ -2,8 +2,12 @@ name: Triggering workflows using Events
 # on : [push, pull_request]
 on:
   #push:
-  pull_request:
-    types: [closed]
+  #pull_request:
+  #  types: [closed]
+  schedule:
+    - cron: "0/5 * * * *"
+    - cron: "0/6 * * * *"
+
 jobs:
   run-github-actions:
     runs-on: windows-2022
