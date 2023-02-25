@@ -1,0 +1,29 @@
+name: Triggering workflows using Events
+on: [push, pull_request]
+jobs:
+  run-github-actions:
+    runs-on: windows-2022
+    steps:
+     - name: List files
+        run: |
+          ls
+          pwd
+          echo "${{github.sha}}"
+          echo "${{github.repository}}"
+          echo "${{github.workspace}}"
+          echo "${{ github.token }}"
+          # git clone git@github:$GITHUB_REPOSITORY
+          # git checkout $GITHUB_SHA
+      - name: Checkout
+        uses: actions/checkout@v3.3.0
+      - name: List files after checkout
+        run: |
+          ls -hidden
+          pwd
+      - name: Simple JS action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: Likhitha
+      - name: Log greeting time
+        run: echo "${{ steps.greet.outputs.time }}"
