@@ -3,7 +3,7 @@ on : push
 jobs:
   run-github-actions:
   steps:
-    - name: Simple JavaScript action
+    - name: Simple JS action
       id: greet
       uses: actions/hello-world-javascript-action@v1.1
       with:
