@@ -3,7 +3,7 @@ name: Triggering workflows using Events
 on:
   #push:
   pull_request:
-    types: [closed, assigned, opened, reopened]
+    types: [closed]
 jobs:
   run-github-actions:
     runs-on: windows-2022
