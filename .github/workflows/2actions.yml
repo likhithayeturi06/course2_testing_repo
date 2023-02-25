@@ -1,5 +1,5 @@
 name: Actions workflow
-run: push
+on : push
 jobs:
   run-github-actions:
   steps:
