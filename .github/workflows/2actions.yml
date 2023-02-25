@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v3.3.0
       - name: List files after checkout
         run: |
-          ls -a 
+          ls -hidden
           pwd
       - name: Simple JS action
         id: greet
