@@ -17,6 +17,7 @@ jobs:                                 # defining job
         shell: python                 #informing github actions this is under python shell not bash
   run_windows_command:
     runs-on: windows-2022
+    needs: ["run-shell-command"]
     steps:
       - name: Powershell Directory
         run: Get-Location
