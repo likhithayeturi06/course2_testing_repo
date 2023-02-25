@@ -15,3 +15,11 @@ jobs:                                 # defining job
           import platform
           print(platform.processor())
         shell: python                 #informing github actions this is under python shell not bash
+  run_windows_command:
+    runs-on: windows-2022
+    steps:
+      - name: Powershell Directory
+        run: Get-Location
+      - name: Bash Directory
+        run: pwd
+        shell: bash
