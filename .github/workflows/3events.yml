@@ -1,10 +1,10 @@
 name: Triggering workflows using Events
-on: [push, pull_request]
+on : [push, pull_request]
 jobs:
   run-github-actions:
     runs-on: windows-2022
     steps:
-     - name: List files
+      - name: List files
         run: |
           ls
           pwd
