@@ -1,0 +1,12 @@
+name: First workflow Shell commands   # name of the entire workflow
+on: push                              #to trigger workflow we need to define events push or [push,pull_request]
+jobs:                                 # defining job
+  run-shell-command:                  # name of the job
+    runs-on: windows-2022             # runs on VM, defining our os
+    steps:                            # array of objects for jobs
+      - name: echo a string
+        run: echo "Hellloooo"
+      - name: multi line script
+        run: |
+          node -v
+          npm -v
