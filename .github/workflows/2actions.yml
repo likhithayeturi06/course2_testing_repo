@@ -2,11 +2,12 @@ name: Actions workflow
 on : push
 jobs:
   run-github-actions:
-  steps:
-    - name: Simple JS action
-      id: greet
-      uses: actions/hello-world-javascript-action@v1.1
-      with:
-        who-to-greet: Likhitha
-    - name: Log greeting time
-      run: echo ${{ steps.greet.outputs.time }}
+    runs-on: windows-2022
+    steps:
+      - name: Simple JS action
+        id: greet
+        uses: actions/hello-world-javascript-action@v1.1
+        with:
+          who-to-greet: Likhitha
+      - name: Log greeting time
+        run: echo ${{ steps.greet.outputs.time }}
