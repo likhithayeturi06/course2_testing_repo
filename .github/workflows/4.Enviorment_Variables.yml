@@ -1,7 +1,7 @@
 name: Environment
 on: push
 env:
-  workflow_env: Available to all jobs
+  workflow_env: ${{secrets.workflow_env}}#Available to all jobs
 jobs:
   logs-env:
     runs-on: ubuntu-latest
