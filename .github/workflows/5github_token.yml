@@ -11,7 +11,7 @@ jobs:
       - name: Push a random file
         run: |
           pwd
-          ls -hidden
+          ls -a
           git init
           git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
           git config --global user.email "my-bot@bot.com"
@@ -20,9 +20,9 @@ jobs:
           git checkout master
           git branch --set-upstream-to=origin/master
           git pull
-          ls
+          ls -a
           echo $RANDOM >> random.txt
-          ls
+          ls -a
           git add -A
           git commit -m "Random File"
           git push
