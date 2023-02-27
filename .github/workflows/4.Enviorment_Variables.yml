@@ -2,30 +2,30 @@ name: Environment
 on: push
 env:
   workflow_env: Available to all jobs
-  jobs:
-    logs-env:
-      runs-on: ubuntu-latest
-      env:
-        JOB_ENV: available to all steps in log_env job
-      steps:
-        - name: Log ENV variable
-          env: null
+jobs:
+  logs-env:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: available to all steps in log_env job
+    steps:
+      - name: Log ENV variable
+        env:
           STEP_ENV: available to only this step
-          run: |
-            echo "workflow_env: ${workflow_env}"
-            echo "JOB_ENV: ${JOB_ENV}"
-            echo "STEP_ENV: ${STEP_ENV}"
-        - name: Log Env 2
-          run: |
-            echo "workflow_env: ${workflow_env}"
-            echo "JOB_ENV: ${JOB_ENV}"
-            echo "STEP_ENV: ${STEP_ENV}"			
-    log-default-env:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Log ENV variable
-          run: |
-            echo "home: ${HOME}"
-            echo "workflow_env: ${workflow_env}"
-            echo "JOB_ENV: ${JOB_ENV}"
-            echo "STEP_ENV: ${STEP_ENV}"
+        run: |
+          echo "workflow_env: ${workflow_env}"
+          echo "JOB_ENV: ${JOB_ENV}"
+          echo "STEP_ENV: ${STEP_ENV}"
+      - name: Log Env 2
+        run: |
+          echo "workflow_env: ${workflow_env}"
+          echo "JOB_ENV: ${JOB_ENV}"
+          echo "STEP_ENV: ${STEP_ENV}"			
+  log-default-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log ENV variable
+        run: |
+          echo "home: ${HOME}"
+          echo "workflow_env: ${workflow_env}"
+          echo "JOB_ENV: ${JOB_ENV}"
+          echo "STEP_ENV: ${STEP_ENV}"
